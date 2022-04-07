@@ -1,12 +1,12 @@
 import {
-  Connection, createConnection, getRepository, Repository,
+  Connection, createConnection, getRepository, Repository
 } from 'typeorm';
-
 import { Game } from '../modules/games/entities/Game';
-import { User } from '../modules/users/entities/User';
-
-import { UsersRepository } from '../modules/users/repositories/implementations/UsersRepository';
 import { GamesRepository } from '../modules/games/repositories/implementations/GamesRepository';
+import { User } from '../modules/users/entities/User';
+import { UsersRepository } from '../modules/users/repositories/implementations/UsersRepository';
+
+
 
 const usersSeed: User[] = [
   {
@@ -135,8 +135,8 @@ describe('Repositories', () => {
 
   it('[UsersRepository] should be able to find user by full name', async () => {
     const result1 = await usersRepository.findUserByFullName({
-      first_name: 'VinIcIus',
-      last_name: 'fRAga',
+      first_name: 'Vinicius',
+      last_name: 'Fraga',
     });
 
     const result2 = await usersRepository.findUserByFullName({
